@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirmación</title>
+  
+  <!-- Tailwind CSS for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- React libraries -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  
+  <!-- Babel for in-browser JSX transpilation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const App = () => {
+      // The original ghost icon is embedded as a Base64 encoded SVG data URI.
+      // This makes the HTML file self-contained without external image dependencies.
+      const imageUrl = "iconito2.png"
+
+      return (
+        <main className="bg-white text-gray-800 min-h-screen flex flex-col font-sans p-8">
+          <div className="flex-grow flex flex-col items-center justify-center">
+            <div className="text-center">
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+                Tus recuerdos fueron guardados exitosamente
+              </h1>
+              <p className="mt-4 text-lg text-gray-600">
+                ya puedes cerrar esta pagina
+              </p>
+            </div>
+            <img 
+              src={imageUrl} 
+              alt="Illustration of a friendly ghost wearing a helmet." 
+              className="w-56 h-56 mt-12"
+            />
+          </div>
+        </main>
+      );
+    };
+
+    const rootElement = document.getElementById('root');
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<App />);
+
+  </script>
+</body>
+</html>
